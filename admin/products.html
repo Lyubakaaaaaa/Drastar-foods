@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="bg">
+<head>
+  <meta charset="UTF-8">
+  <title>Admin Products – Drustur Foods</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="css/admin-layout.css">
+  <link rel="stylesheet" href="css/admin-products.css">
+</head>
+<body class="admin-body">
+  <div class="admin-layout">
+    <aside class="admin-sidebar">
+      <div class="admin-logo">
+        DRUSTUR <span>ADMIN</span>
+      </div>
+
+      <nav class="admin-nav">
+        <a href="index.html" class="admin-nav-link">Табло</a>
+        <a href="products.html" class="admin-nav-link admin-nav-link--active">Продукти</a>
+        <a href="categories.html" class="admin-nav-link">Категории</a>
+      </nav>
+
+      <div class="admin-sidebar-footer">
+        Управление на каталога с продукти.
+      </div>
+    </aside>
+
+    <main class="admin-main">
+      <header class="admin-topbar">
+        <div class="admin-topbar-title">Продукти</div>
+        <div class="admin-topbar-right">
+          <div class="admin-topbar-user">Вписан администратор</div>
+          <button class="admin-topbar-logout" id="admin-logout-btn">Изход</button>
+        </div>
+      </header>
+
+      <section class="admin-content">
+        <div class="admin-content-inner">
+          <h1 class="admin-page-title">Каталог с продукти</h1>
+
+          <div class="admin-products-toolbar">
+            <input type="text" id="admin-products-search" placeholder="Търсене по име или код...">
+            <button type="button" id="admin-products-add" class="admin-products-btn">
+              Нов продукт
+            </button>
+            <button type="button" id="admin-products-export" class="admin-products-btn">
+              Експорт на JSON
+            </button>
+          </div>
+
+          <div class="admin-products-table-wrapper">
+            <table class="admin-products-table">
+              <thead>
+                <tr>
+                  <th>Код</th>
+                  <th>Име</th>
+                  <th>Категория</th>
+                  <th>Произв.</th>
+                  <th>Цена (лв.)</th>
+                  <th>Нов</th>
+                  <th>Top</th>
+                  <th>Действия</th>
+                </tr>
+              </thead>
+              <tbody id="admin-products-tbody">
+                <!-- JS ще рендерира редовете -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <!-- МОДАЛ ЗА ДОБАВЯНЕ / РЕДАКЦИЯ НА ПРОДУКТ -->
+  <div class="admin-modal-backdrop" id="admin-product-modal-backdrop">
+    <div class="admin-modal" role="dialog" aria-modal="true">
+      <div class="admin-modal-header">
+        <h2 class="admin-modal-title" id="admin-product-modal-title">Нов продукт</h2>
+        <button type="button" class="admin-modal-close" id="admin-product-modal-close">✕</button>
+      </div>
+
+      <form id="admin-product-form" class="admin-product-form">
+        <input type="hidden" id="admin-product-id">
+
+        <div class="admin-product-form-grid">
+          <div class="admin-form-group">
+            <label for="admin-product-code">Код</label>
+            <input type="text" id="admin-product-code" placeholder="DF-001">
+          </div>
+
+          <div class="admin-form-group admin-form-group--wide">
+            <label for="admin-product-name">Име на продукт</label>
+            <input type="text" id="admin-product-name" required>
+          </div>
+
+          <div class="admin-form-group">
+            <label for="admin-product-category">Категория</label>
+            <input type="text" id="admin-product-category" placeholder="napitki / hranitelnI / nehranitelnI">
+          </div>
+
+          <div class="admin-form-group">
+            <label for="admin-product-subcategory">Подкатегория</label>
+            <input type="text" id="admin-product-subcategory" placeholder="voda / gazirani / ...">
+          </div>
+
+          <div class="admin-form-group">
+            <label for="admin-product-subsubcategory">Под-подкатегория (по желание)</label>
+            <select id="admin-product-subsubcategory" name="subsubcategory">
+              <option value="">— без под-подкатегория —</option>
+              <!-- ще се пълни от JS -->
+            </select>
+          </div>
+
+          <div class="admin-form-group">
+            <label for="admin-product-manufacturer">Производител</label>
+            <input type="text" id="admin-product-manufacturer" placeholder="baldaran / coca_cola / ...">
+          </div>
+
+          <div class="admin-form-group">
+            <label for="admin-product-unit">Мерна единица</label>
+            <input type="text" id="admin-product-unit" placeholder="СТК. / БР. / ПАКЕТ">
+          </div>
+
+          <div class="admin-form-group">
+            <label for="admin-product-price-bgn">Цена (лв.)</label>
+            <input type="number" step="0.01" id="admin-product-price-bgn" required>
+          </div>
+
+          <div class="admin-form-group">
+            <label for="admin-product-price-eur">Цена (€)</label>
+            <input type="number" step="0.01" id="admin-product-price-eur" required>
+          </div>
+
+          <div class="admin-form-group admin-form-group--wide">
+            <label for="admin-product-image">URL на снимка</label>
+            <input type="text" id="admin-product-image" placeholder="images/products/...">
+          </div>
+
+          <div class="admin-form-group admin-form-group--wide">
+            <label for="admin-product-description">Описание</label>
+            <textarea id="admin-product-description" rows="3"></textarea>
+          </div>
+
+          <div class="admin-form-switches">
+            <label class="admin-switch">
+              <input type="checkbox" id="admin-product-featured">
+              <span>Най-поръчван (featured)</span>
+            </label>
+
+            <label class="admin-switch">
+              <input type="checkbox" id="admin-product-is-new">
+              <span>Нов продукт (is_new)</span>
+            </label>
+          </div>
+        </div>
+
+        <div class="admin-modal-footer">
+          <button type="button" class="admin-modal-secondary" id="admin-product-cancel">
+            Отказ
+          </button>
+          <button type="submit" class="admin-modal-primary">
+            Запази
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <script src="js/admin-api.js"></script>
+  <script src="js/admin-main.js"></script>
+  <script src="js/admin-products1.js"></script>
+</body>
+</html>

@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="bg">
+<head>
+  <meta charset="UTF-8">
+  <title>Продукти – Дръстър Фуудс</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Шрифтове по твой избор, пример: Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/index.css?v=4">
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/products2.css">
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="site-header">
+  <div class="container header-inner">
+    <a href="index.html" class="header-logo">
+      <img src="images/logo/logo.png" alt="Дръстър Фуудс">
+    </a>
+
+    <!-- Десктоп навигация -->
+    <nav class="main-nav" id="main-nav">
+      <a href="index.html" class="nav-link nav-link--active">Начало</a>
+      <a href="products.html" class="nav-link">Продукти</a>
+      <a href="#" class="nav-link">Контакти</a>
+      <a href="auth.html" id="nav-login-link" class="nav-link">Вход</a>
+      <button id="nav-logout-btn" class="nav-link" style= " text-decoration: none; color: #16324F; font-weight: 500; position: relative; display:none; border:none; background:none; cursor:pointer;">
+        Изход
+      </button>
+    </nav>
+
+    <a href="tel:0894889155" class="header-phone">089 488 9155</a>
+
+    <!-- HAMBURGER за мобилни -->
+    <button class="header-hamburger" id="nav-toggle" aria-label="Меню">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </div>
+
+  <!-- Мобилно падащо меню -->
+  <nav class="mobile-nav" id="mobile-nav">
+    <a href="index.html" class="mobile-nav-link">Начало</a>
+    <a href="products.html" class="mobile-nav-link mobile-nav-link--active">Продукти</a>
+    <a href="#" class="mobile-nav-link">За нас</a>
+    <a href="#" class="mobile-nav-link">Контакти</a>
+    <a href="tel:0894889155" class="mobile-nav-phone">089 488 9155</a>
+  </nav>
+
+  <!-- тъмен фон за менюто -->
+  <div class="backdrop" id="nav-backdrop"></div>
+  </header>
+
+  <section class="hero" id="hero">
+    <div class="hero-content">
+      <h1 class="hero-title">
+        Дистрибуция на хранителни продукти с доверие и скорост
+      </h1>
+      <p class="hero-subtitle">
+        Дръстър Foods — стабилна дистрибуция, складови услуги и надеждни партньорства.
+      </p>
+      <div class="hero-actions">
+        <button class="btn btn-primary" id="toCatalog" href="products.html" >
+          <a href="products.html" class="hero-btn-text">Към каталог</a>
+          
+        </button>
+        <button class="btn btn-secondary" id="toContact">
+          Свържи се с нас
+        </button>
+      </div>
+    </div>
+  </section>
+
+
+  <section class="home-products">
+  <div class="container">
+    <div class="home-products-header">
+      <h2 class="home-products-title">НАЙ-ПОРЪЧВАНИ ПРОДУКТИ</h2>
+
+      <div class="home-products-arrows">
+        <button class="home-products-arrow" id="home-products-prev" aria-label="Предишни продукти">
+          ‹
+        </button>
+        <button class="home-products-arrow" id="home-products-next" aria-label="Следващи продукти">
+          ›
+        </button>
+      </div>
+    </div>
+
+    <div class="home-products-track-wrapper">
+      <div class="home-products-track" id="home-products-track">
+        <!-- Тук JS ще вкара 4 продукта за текущия слайд -->
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="home-products home-products--new">
+  <div class="container">
+    <div class="home-products-header">
+      <h2 class="home-products-title">НОВИ ПРОДУКТИ</h2>
+
+      <div class="home-products-arrows">
+        <button class="home-products-arrow" id="new-products-prev" aria-label="Предишни нови продукти">
+          ‹
+        </button>
+        <button class="home-products-arrow" id="new-products-next" aria-label="Следващи нови продукти">
+          ›
+        </button>
+      </div>
+    </div>
+
+    <div class="home-products-track-wrapper">
+      <div class="home-products-track" id="new-products-track">
+        <!-- тук JS ще сложи картите за новите продукти -->
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="services-section">
+  <h2 class="services-title">Нашите услуги</h2>
+
+  <div class="services-cards">
+    
+    <div class="service-card">
+      <div class="service-top"></div>
+
+      <div class="service-bottom">
+        <div class="service-icon">
+          <!-- <img src="icons/icon1.svg" alt=""> -->
+        </div>
+        <h3>Text</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+      </div>
+    </div>
+
+    <div class="service-card">
+      <div class="service-top"></div>
+      <div class="service-bottom">
+        <div class="service-icon"></div>
+        <h3>Text</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+      </div>
+    </div>
+
+    <div class="service-card">
+      <div class="service-top"></div>
+      <div class="service-bottom">
+        <div class="service-icon"></div>
+        <h3>Text</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+<section class="about-section">
+  <div class="about-inner">
+    <!-- ЛЯВО -->
+    <div class="about-left">
+      <p class="about-label">За Нас</p>
+      <h2 class="about-heading">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+        tempor incididunt ut
+      </h2>
+
+      <div class="about-image">
+        <!-- Тук ще сложиш снимка като background-image в CSS
+             или <img> вътре, ако предпочиташ -->
+        <!-- <img src="images/about.jpg" alt="About Drustar Foods"> -->
+      </div>
+    </div>
+
+    <!-- ДЯСНО -->
+    <div class="about-right">
+      <div class="about-stats">
+        <div class="about-stat" data-target="20">
+          <div class="about-stat-value">20</div>
+          <div class="about-stat-label">text</div>
+        </div>
+        <div class="about-stat" data-target="5">
+          <div class="about-stat-value">5</div>
+          <div class="about-stat-label">text</div>
+        </div>
+        <div class="about-stat" data-target="122">
+          <div class="about-stat-value">122</div>
+          <div class="about-stat-label">text</div>
+        </div>
+      </div>
+
+      <p class="about-text">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+        veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+        commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
+        velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
+        occaecat cupidatat non proident, sunt in culpa qui officia deserunt
+        mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur
+        adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
+        magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+        ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure
+        dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat
+        nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
+        culpa qui officia deserunt mollit anim id est laborum.
+      </p>
+    </div>
+  </div>
+</section>
+
+
+
+    <!-- BACKDROP за продукта -->
+<div class="product-modal-backdrop" id="product-backdrop"></div>
+
+<!-- МОДАЛ С ДЕТАЙЛИ НА ПРОДУКТА -->
+<div class="product-modal" id="product-modal" aria-hidden="true">
+  <div class="product-modal__dialog">
+    <button class="product-modal__close" id="product-modal-close" aria-label="Затвори">
+      ✕
+    </button>
+
+    <div class="product-modal__content">
+      <div class="product-modal__image-wrap">
+        <img src="" alt="" id="modal-product-image">
+      </div>
+
+      <div class="product-modal__info">
+        <h2 class="product-modal__title" id="modal-product-title"></h2>
+
+        <div class="product-modal__code" id="modal-product-code"></div>
+
+        <div class="product-modal__meta">
+          <span id="modal-product-category" class="product-modal__meta-item"></span>
+          <span id="modal-product-manufacturer" class="product-modal__meta-item"></span>
+        </div>
+
+        <div class="product-modal__price">
+          <span id="modal-price-bgn" class="product-modal__price-bgn"></span>
+          <span id="modal-price-eur" class="product-modal__price-eur"></span>
+        </div>
+
+        <p class="product-modal__description" id="modal-product-description"></p>
+      </div>
+    </div>
+  </div>
+</div>
+
+    <footer class="site-footer">
+  <div class="footer-main">
+    <div class="container footer-main-inner">
+      <!-- Ляв блок: лого + описание -->
+      <div class="footer-col footer-col--brand">
+        <a href="index.html" class="footer-logo">
+          <img src="images/logo/logo.png" alt="Дръстър Фуудс">
+        </a>
+        <p class="footer-tagline">
+          Доставка на хранителни и нехранителни стоки за магазини,
+          заведения и обекти в региона.
+        </p>
+      </div>
+
+      <!-- Централен блок: навигация -->
+      <div class="footer-col footer-col--nav">
+        <nav class="footer-nav">
+          <a href="index.html" class="footer-link">Начало</a>
+          <a href="products.html" class="footer-link">Продукти</a>
+          <a href="about.html" class="footer-link">За нас</a>
+          <a href="contacts.html" class="footer-link">Контакти</a>
+        </nav>
+      </div>
+
+      <!-- Десен блок: адрес и контакти -->
+      <div class="footer-col footer-col--contact">
+        <h4 class="footer-heading">Адрес</h4>
+        <p class="footer-text">
+          гр. Силистра, България<br>
+          (примерен адрес – ще го смениш по-късно)
+        </p>
+
+        <h4 class="footer-heading">Контакти</h4>
+        <p class="footer-text">
+          Тел.: <a href="tel:0894889155" class="footer-link-inline">089 488 9155</a><br>
+          Имейл: <a href="mailto:info@drusturfoods.bg" class="footer-link-inline">info@drusturfoods.bg</a>
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <div class="container footer-bottom-inner">
+      <p class="footer-copy">
+        © 2025 Дръстър Фуудс. Всички права запазени.
+      </p>
+      <div class="footer-bottom-links">
+        <a href="#" class="footer-bottom-link">Политика за поверителност</a>
+        <a href="#" class="footer-bottom-link">Общи условия</a>
+        <a href="#" class="footer-bottom-link">Настройки на бисквитки</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+    <script src="js/index.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/user-auth.js"></script>
+    <script src="js/products-page.js"></script>
+</body>
+</html>

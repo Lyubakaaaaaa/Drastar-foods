@@ -1,0 +1,164 @@
+/* Малко интро под заглавието */
+.admin-categories-intro {
+  margin: 0 0 12px;
+  font-size: 13px;
+  color: #9CA3AF;
+}
+
+/* Две колони: Категории / Подкатегории */
+.admin-categories-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1.05fr) minmax(0, 1.2fr);
+  gap: 14px;
+}
+
+/* Карточки (панели) за двете таблици */
+.admin-categories-panel,
+.admin-subcategories-panel {
+  background: rgba(15, 23, 42, 0.9);
+  border-radius: 14px;
+  border: 1px solid rgba(148, 163, 184, 0.4);
+  padding: 10px 12px 12px;
+  box-shadow: 0 16px 40px rgba(15, 23, 42, 0.7);
+}
+
+/* Заглавие на панел + брой */
+.admin-categories-header-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  margin-bottom: 6px;
+}
+
+.admin-categories-subtitle {
+  margin: 0;
+  font-size: 14px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #E5E7EB;
+}
+
+.admin-subcategories-for {
+  font-size: 11px;
+  color: #9CA3AF;
+  margin-left: 6px;
+}
+
+.admin-categories-count {
+  font-size: 11px;
+  color: #9CA3AF;
+}
+
+/* Toolbar – използваме стила на .admin-products-toolbar */
+.admin-categories-toolbar,
+.admin-subcategories-toolbar {
+  margin-bottom: 8px;
+}
+
+#admin-categories-search,
+#admin-subcategories-search {
+  flex: 1;
+  min-width: 140px;
+  border-radius: 999px;
+  border: 1px solid rgba(148, 163, 184, 0.7);
+  background: #020617;
+  color: #E5E7EB;
+  padding: 6px 12px;
+  font-size: 13px;
+  outline: none;
+}
+
+#admin-categories-search::placeholder,
+#admin-subcategories-search::placeholder {
+  color: #6B7280;
+}
+
+#admin-categories-search:focus,
+#admin-subcategories-search:focus {
+  border-color: #38BDF8;
+  box-shadow: 0 0 0 1px rgba(56, 189, 248, 0.6);
+}
+
+/* Таблиците за категории и подкатегории използват базовия стил */
+.admin-categories-table-wrapper,
+.admin-subcategories-table-wrapper {
+  margin-top: 4px;
+}
+
+/* По-малко шрифт за ID/ред */
+.admin-categories-table th:first-child,
+.admin-categories-table td:first-child,
+.admin-subcategories-table th:first-child,
+.admin-subcategories-table td:first-child {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+}
+
+.admin-categories-table td,
+.admin-subcategories-table td {
+  font-size: 13px;
+}
+
+/* Малки бейджове за „Активна“ колона */
+.admin-category-active-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 2px 8px;
+  border-radius: 999px;
+  font-size: 11px;
+  font-weight: 500;
+  background: rgba(34, 197, 94, 0.14);
+  color: #4ADE80;
+}
+
+.admin-category-inactive-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 2px 8px;
+  border-radius: 999px;
+  font-size: 11px;
+  font-weight: 500;
+  background: rgba(248, 113, 113, 0.12);
+  color: #FCA5A5;
+}
+
+/* Активен ред за текущо избрана категория */
+.admin-category-row--selected {
+  background: rgba(15, 23, 42, 0.9);
+}
+
+.admin-category-row--selected td {
+  border-bottom-color: rgba(56, 189, 248, 0.7);
+}
+
+/* Responsive: една под друга панели */
+@media (max-width: 900px) {
+  .admin-categories-layout {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+/* Малки доработки на модалите за категории/подкатегории */
+
+#cat-active {
+  border-radius: 10px;
+  border: 1px solid rgba(148, 163, 184, 0.8);
+  background: #020617;
+  color: #E5E7EB;
+  padding: 6px 9px;
+  font-size: 13px;
+}
+
+#subcat-categoryId {
+  border-radius: 10px;
+  border: 1px solid rgba(148, 163, 184, 0.8);
+  background: #020617;
+  color: #E5E7EB;
+  padding: 6px 9px;
+  font-size: 13px;
+}
+
+/* Подсказка за избрана категория в селекта (по желание) */
+#subcat-categoryId:invalid {
+  color: #6B7280;
+}
